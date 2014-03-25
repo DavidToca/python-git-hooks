@@ -1,0 +1,5 @@
+last_hash=`git log -2 --format=%H | tail -1`
+if git diff --name-only $last_hash HEAD | grep requirements.txt
+then
+    pip install -r requirements.txt
+fi
